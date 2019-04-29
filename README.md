@@ -1,6 +1,6 @@
 # Shortener
 
-A simple URL shortening web app in written in Python using Django framework.
+A simple URL shortening web app written in Python using Django
 
 This web app includes the following function:
 * An endpoint that receives a URL and returns a new shortened URL
