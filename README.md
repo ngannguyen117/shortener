@@ -2,7 +2,7 @@
 
 A simple URL shortening web app written in Python using Django
 
-This web app includes the following function:
+This web app includes the following functions:
 * An endpoint that receives a URL and returns a new shortened URL
 * An endpoint to retrieve the last 100 shortened URLs
 * An endpoint to retrieve the top 10 most popular shortened domains in the past month
