@@ -1,0 +1,6 @@
+[
+  "shortener/tests.py::Tests::test_count",
+  "shortener/tests.py::Tests::test_recent",
+  "shortener/tests.py::Tests::test_shorten",
+  "shortener/tests.py::Tests::test_top"
+]

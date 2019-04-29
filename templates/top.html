@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load mathfilters %}
+{% block content %}
+
+{% if top_10_links %}
+<div>
+  <table>
+      <tr>
+        <th>Domain</th>
+        <th>Requests</th>
+      </tr>
+    {% for link in top_10_links %}
+      <tr>
+        <td>{{ link.domain }}</td>
+        <td>{% if link.current_month|mod:2 %} {{link.even_month_num_visited}}{% else %} {{link.odd_month_num_visited}}{% endif %}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</div>
+{% else %}
+  <p>No links are converted</p>
+{% endif %}
+
+{% endblock content %}

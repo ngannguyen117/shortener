@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<h1>Let's Shorten Your URL</h1>
+<form action="{% url 'shorten' %}" method = "post">
+{% csrf_token %}
+    <input type="text" name="url" class="custom" style="width: 415px; height: 32px; margin: 20px 0;"><br/><br/>
+	<input type="submit" value="Submit" style="width: 70px; height: 25px; text-align:center; margin: 0 0 20px 0;"/>
+</form>
+
+{% if messages %} 
+    {% for message in messages %}
+        <span style="margin: 20px;" class="link">
+            Shortened URL: <strong><a href="{% url 'retrieve' message.extra_tags %}" target="_blank">http://127.0.0.1:8000/{{message.extra_tags}}</a></strong> 
+        </span>
+    {% endfor %}
+{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Enter a shortened URL</h1>
+<form action="{% url 'count_result' %}" method = "get">
+{% csrf_token %}
+    <input type="text" name="short_url" class="custom" style="width: 415px; height: 32px; margin: 20px 0;"><br/><br/>
+	<input type="submit" value="Submit" style="width: 70px; height: 25px; text-align:center; margin: 0 0 20px 0;"/>
+</form>
+
+{% if messages %} 
+    {% for message in messages %}
+        <span style="margin: 20px;" class="link">
+            {{message.extra_tags}}
+        </span>
+    {% endfor %}
+{% endif %}
+{% endblock content %}

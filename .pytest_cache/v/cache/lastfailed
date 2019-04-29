@@ -1,0 +1,6 @@
+{
+  "shortener/tests.py::Tests::test_count": true,
+  "shortener/tests.py::Tests::test_recent": true,
+  "shortener/tests.py::Tests::test_shorten": true,
+  "shortener/tests.py::Tests::test_top": true
+}

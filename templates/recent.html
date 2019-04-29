@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if recent_100_links %}
+<div class = "link">
+  <ul>
+    {% for link in recent_100_links %}
+      <li><a href="{% url 'retrieve' link.shortenURL %}" target="_blank">http://127.0.0.1:8000/{{ link.shortenURL }}</a></li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No links are converted</p>
+{% endif %}
+</div>
+{% endblock content %}

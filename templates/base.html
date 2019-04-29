@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset = "UTF-8">
+  <title>URL Shortening App</title>
+  <style>
+    div {
+      position: relative;
+      top: 5%;
+      text-align: center;
+      align-content: center;
+      
+    }
+
+    ul, .menu-area li {
+      list-style-type: none;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      outline: 0;
+      box-sizing: border-box;
+    }
+      
+    body {
+      height: 100vh;
+      background:#008080;
+      color: #fff;
+      font-weight: 300;
+    }
+      
+    .menu-area li a {
+      text-decoration: none;
+    }
+
+    .custom-padding{
+      padding-top: 25px;
+    }
+
+    nav {
+      position: relative;
+      width: calc(100% - 60px);
+      margin: 0 auto;
+      padding: 10px 0;
+      background: #333;
+      z-index: 1;
+      text-align: center;
+      padding-right: 2%;
+    }
+
+    .menu-area li {
+      display: inline-block;
+    }
+
+    .menu-area a {
+      color: #fff;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: block;
+      padding: 0 25px;
+      font-size: 14px;
+      line-height: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .menu-area a:hover{
+      background: tomato;
+      color: #fff;
+    }
+
+    .menu-area a:hover:after {
+      transform: translateY(-50%) rotate(-35deg);
+    }
+
+    nav:before {
+      position: absolute;
+      content: '';
+      border-top: 10px solid #333;
+      border-right: 10px solid #333;
+      border-left: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      top: 100%;
+      left: 0;
+    }
+
+    nav:after {
+      position: absolute;
+      content: '';
+      border-top: 10px solid #333;
+      border-left: 10px solid #333;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      top: 100%;
+      right: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      align: center;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+
+    table, th, td  {
+      border: 1px solid black;
+      padding: 10px;
+      border-color: tomato;
+    }
+
+    .link li{
+      padding: 5px;
+    }
+    .link a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .link a:visited {
+      
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="custom-padding">
+      <nav>
+        <ul class="menu-area">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'top' %}">Top 10 Domains</a></li>
+          <li><a href="{% url 'recent' %}">Most Recent URLs</a></li>
+          <li><a href="{% url 'count' %}">Count URL Usage</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <div class="content">
+    {% block content %}
+  </div>
+    
+</body>
+</html>
+{% endblock %}
